@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LandingInputTag from '../Inputs/inputs'
+import LandingInputTag from '../LandingInputTag/landingInputTag';
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
