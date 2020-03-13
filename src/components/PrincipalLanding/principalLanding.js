@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import LandingInputTag from '../LandingInputTag/landingInputTag';
+import LandingInputTag from '../TextLanding/textLanding';
 
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
@@ -36,9 +36,6 @@ export default function Tags() {
 
   return (
   <LandingInputTag
-      handleClick={handleClick}
-      tags={array}
-      selectedTags={selectedTags}
     />
   );
 }
