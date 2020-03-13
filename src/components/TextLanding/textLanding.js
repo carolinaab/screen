@@ -1,66 +1,52 @@
 import React from 'react';
 import { Grid, Box, makeStyles, ListItem, Typography, Button } from '@material-ui/core';
 import LogoWitideal from '../../logoWitideal-negative.svg';
-import ClearIcon from "@material-ui/icons/Clear";
-import SearchIcon from '@material-ui/icons/Search';
 import facebook from '../../assets/facebook.png';
-import twitter from '../../assets/twitter.png';
 
 
 const useStyles = makeStyles(theme => ({
 
   container: {
     backgroundColor: "#3F19F9",
-    height: "100vh"
+    height: "100vh",
+    color:"white",
+   
   },
-  tag:{
-    textAlign: "center",
-    height: 40,
-    color: "#3F19F9",
-    padding: 8,
-    fontSize: 14,
-    listStyle: "none",
-    borderRadius: 100,
-    marginRight: 8,
-    background: "#FFFF",
-    width: "auto"
-  },
-  button:{
-  border: "1px solid #32FFD2",
-  borderRadius:100,
-  padding:'10px 20px 10px 20px',
-  textTransform:"none",
-  color:"white",
-  fontSize:15
-  },
+ 
   spacingtop: {
-    marginTop: 100
+    marginTop: 100,
   },
-  
+
   img: {
     marginLeft: 10,
-    width:50
+    width: 50,
+    [theme.breakpoints.down('sm')]: {
+      width: 40,
+    }
   },
-  containerInputTag: {
-    height: 200,
-    overflow: "auto",
-    //paddingTop: 10
+  colorWdGreen:{
+    color: '#32FFD2',
+    fontWeight: "600"
   },
-  clearIcon: {
-    color: props => props.color
-  }
+  title:{
+    fontSize:20,
+    letterSpacing:1,
+    fontWeight: "600"
+  },
+  imgLogo: {
+    [theme.breakpoints.down('sm')]: {
+      width: 150
+
+    }
+  },
+  
+ 
 }));
 
 
 
-export default function Inputs(props) {
+export default function TextLanding(props) {
   const classes = useStyles();
-
-  const [tags, setTags] = React.useState(props.tags);
-  const removeTags = indexToRemove => {
-    setTags([...tags.filter((_, index) => index !== indexToRemove)]);
-  };
-
 
 
   return (
@@ -70,20 +56,26 @@ export default function Inputs(props) {
           <Grid item xs={12} md={12}>
             <Grid container justify="space-between">
               <Grid item >
-                <img src={LogoWitideal} />
+                <img className={classes.imgLogo}src={LogoWitideal} />
               </Grid>
               <Grid item >
-                <img src={facebook} className={classes.img} />
-                <img src={twitter} className={classes.img} />
+              <a href="https://www.facebook.com/pages/category/Software-Company/Witideal-100558841331747/" alt="instagram"><img src={facebook} className={classes.img} /></a>
+                <img  alt="instagram"className={classes.img} />
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={12} md={12}>
-            <Grid container className={classes.spacingtop}>
-              <Grid item xs={8}>
-                
+            <Grid container className={classes.spacingtop} spacing={6}>
+              <Grid item xs={12}>
+                <Typography variant="body2" className={classes.title}>{props.title}</Typography>
+                <Typography variant="h2" className={classes.colorWdGreen}>está apunto de cambiar...</Typography>
               </Grid>
-              
+
+              <Grid item xs={12}>
+                <Typography className={classes.title}>
+                PRÓXIMAMENTE &nbsp; <span className={classes.colorWdGreen}>ABRIL 2020</span>
+                </Typography>
+              </Grid>
             </Grid>
 
           </Grid>
