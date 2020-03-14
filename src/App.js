@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import PrincipalLandin from './components/PrincipalLanding/principalLanding'
+import PrincipalLandin from './components/Principal/principal'
 
 function App() {
   return (
